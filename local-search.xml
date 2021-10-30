@@ -4,9 +4,22 @@
   
   
   <entry>
+    <title>~~初学PHP【3】</title>
+    <link href="/blog/2021/10/25/php%E5%88%9D%E5%AD%A6-%E3%80%903%E3%80%91/"/>
+    <url>/blog/2021/10/25/php%E5%88%9D%E5%AD%A6-%E3%80%903%E3%80%91/</url>
+    
+    <content type="html"><![CDATA[<h2 id="PHP-EOF-heredoc"><a href="#PHP-EOF-heredoc" class="headerlink" title="PHP EOF(heredoc)"></a>PHP EOF(heredoc)</h2><p><img src="https://i.loli.net/2021/10/29/4EH3LlnVYbA8Nuz.png" alt="屏幕截图 2021-10-29 232607.png"><br>  输出<br>        1111<br>        2222</p><ul><li><ol><li>必须后接分号，否则编译通不过。</li></ol></li><li><ol start="2"><li><h2 id="EOF-可以用任意其它字符代替，开头与结尾需一致。"><a href="#EOF-可以用任意其它字符代替，开头与结尾需一致。" class="headerlink" title="EOF 可以用任意其它字符代替，开头与结尾需一致。"></a>EOF 可以用任意其它字符代替，开头与结尾需一致。</h2></li></ol></li><li><ol start="3"><li><h2 id="结束标识必须顶格独自占一行-即必须从行首开始，前后不能衔接任何空白和字符-。"><a href="#结束标识必须顶格独自占一行-即必须从行首开始，前后不能衔接任何空白和字符-。" class="headerlink" title="结束标识必须顶格独自占一行(即必须从行首开始，前后不能衔接任何空白和字符)。"></a>结束标识必须顶格独自占一行(即必须从行首开始，前后不能衔接任何空白和字符)。</h2></li></ol></li></ul><h2 id="php数据类型"><a href="#php数据类型" class="headerlink" title="php数据类型"></a>php数据类型</h2><ul><li><p>整型</p><pre><code>  * 至少一个数字  * ## 无 空格，逗号，小数  * 十进制 十六进制（0x） 八进制（0）</code></pre></li><li><p>浮点型</p><pre><code>  * 带小数部分的数字或是指数</code></pre></li><li><p>布尔型</p><pre><code>用于判断【true || false】</code></pre><p><img src="https://i.loli.net/2021/10/30/q74tCsWlcdFSDNR.png" alt="屏幕截图 2021-10-30 001243.png"></p></li><li><p>数组<br><img src="https://i.loli.net/2021/10/30/WOemZfs7M9XHk3l.png" alt="屏幕截图 2021-10-30 001558.png"></p></li></ul><p>//整形 浮点型 数组    应使用var_dump($x)<br>  注：var _dump返回的是表达式的 类型与值，更利于阅读</p><h2 id="php类型比较"><a href="#php类型比较" class="headerlink" title="php类型比较"></a>php类型比较</h2><pre><code>* 松散比较：只比较值* 严格比较：比较类型与值</code></pre><p><img src="https://i.loli.net/2021/10/30/BvJ6qc3UOp1eGHW.png" alt="屏幕截图 2021-10-30 111308.png"><br>     输出： 1、值相等<br>                3、类型不相等<br>         {“42”为字符串，42为整数 }</p><h2 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h2><pre><code>  ！不能由数字开头，不能用$修饰，定义的常量默认为全局变量 设置常量使用define函数（如下）</code></pre><p><img src="https://i.loli.net/2021/10/30/EOhSwI7LtYGDlB9.png" alt="屏幕截图 2021-10-30 112820.png"><br><img src="https://i.loli.net/2021/10/30/Rh7s5eOBb6SJcEi.png" alt="屏幕截图 2021-10-30 114707.png"><br>    输出为:JHNB<br>               JHNB<br>    * 加入true后，可以不计大小写(echo PHP_EOL为换行 )</p><h2 id="并置运行符"><a href="#并置运行符" class="headerlink" title="并置运行符"></a>并置运行符</h2><p>  <img src="https://i.loli.net/2021/10/30/UfolFbVB3HJrwaQ.png" alt="屏幕截图 2021-10-30 115903.png"></p><h2 id="strpos-函数"><a href="#strpos-函数" class="headerlink" title="strpos() 函数"></a>strpos() 函数</h2><ul><li>用于在字符串查找一个字符或一段指定的文本<br><img src="https://i.loli.net/2021/10/30/Uezwf5mvnxCJN4G.png" alt="屏幕截图 2021-10-30 120303.png"><br>返回值为6（从0开始）</li></ul>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>~~php初学【2】</title>
-    <link href="/blog/2021/09/22/php%E5%88%9D%E5%AD%A6~~/"/>
-    <url>/blog/2021/09/22/php%E5%88%9D%E5%AD%A6~~/</url>
+    <link href="/blog/2021/09/22/php%E5%88%9D%E5%AD%A6%5B2%5D/"/>
+    <url>/blog/2021/09/22/php%E5%88%9D%E5%AD%A6%5B2%5D/</url>
     
     <content type="html"><![CDATA[<h2 id="PHP-global-关键字"><a href="#PHP-global-关键字" class="headerlink" title="PHP global 关键字"></a>PHP global 关键字</h2><pre><code>    用于调用全局变量</code></pre><p><img src="https://i.loli.net/2021/10/24/D3uUJN1RmGxdqcO.png" alt="屏幕截图 2021-10-24 234736.png"></p><p><img src="https://i.loli.net/2021/10/24/7gRKh6ZrITOQpUS.png" alt="屏幕截图 2021-10-24 234750.png"></p><h2 id="Static作用域"><a href="#Static作用域" class="headerlink" title="Static作用域"></a>Static作用域</h2><pre><code>    * 使一个变量在下次调用是仍为上次计算后的值 </code></pre><p><img src="https://i.loli.net/2021/10/24/B5nPqR8l3EbtMWr.png" alt="屏幕截图 2021-10-24 234623.png"></p><h2 id="参数作用域"><a href="#参数作用域" class="headerlink" title="参数作用域"></a>参数作用域</h2><p><img src="https://i.loli.net/2021/10/24/maPWb8u4MEirYLF.png" alt="屏幕截图 2021-10-24 235108.png"><br>     * 需注意 function mytest（$变量）</p><h2 id="echo-和-print-语句"><a href="#echo-和-print-语句" class="headerlink" title="echo 和 print 语句"></a>echo 和 print 语句</h2><pre><code> 二者区别 * echo    可以输出一个至多个字符串 * echo    仅可以输出一个字符串&amp;&amp;返回值为1二者相同* 括号的使用与否均可  </code></pre>]]></content>
     
@@ -18,8 +31,8 @@
   
   <entry>
     <title>~~初学PHP【1】</title>
-    <link href="/blog/2021/09/22/php%E5%88%9D%E5%AD%A6~/"/>
-    <url>/blog/2021/09/22/php%E5%88%9D%E5%AD%A6~/</url>
+    <link href="/blog/2021/09/22/php%E5%88%9D%E5%AD%A6~%5B1%5D/"/>
+    <url>/blog/2021/09/22/php%E5%88%9D%E5%AD%A6~%5B1%5D/</url>
     
     <content type="html"><![CDATA[<h2 id="什么是PHP"><a href="#什么是PHP" class="headerlink" title="什么是PHP?"></a>什么是PHP?</h2><p>  PHP（全称：PHP：Hypertext Preprocessor，即”PHP：超文本预处理器”）是一种通用开源脚本语言。</p><h2 id="开始与结束"><a href="#开始与结束" class="headerlink" title="开始与结束"></a>开始与结束</h2><p>   PHP 脚本以 <?php 开始，以 ?> 结束：<br><img src="https://i.loli.net/2021/10/23/r3LlDfRYIaNT8hv.png" alt="屏幕截图 2021-10-23 114842.png"><br> （同c一样以 ‘ ; ‘ 为结尾）</p><h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>   ‘ // ‘  为行注释</p><pre><code>&#39;  /*(多行内容)*/  &#39;  为块注释</code></pre><h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><ul><li> 变量规则：</li></ul><p>   变量 以 $ 符号开始，后面跟着变量的名称<br>   变量名 必须以字母或者下划线字符开始<br>   变量名 只能包含字母、数字以及下划线（A-z、0-9 和 _ ）<br>   变量名 不能包含空格<br>   变量名 是区分大小写的（$y 和 $Y 是两个不同的变量）</p><ul><li><p> PHP 语句和 PHP 变量都是区分大小写的。</p></li><li><p>变量作用域<br><img src="https://i.loli.net/2021/10/23/MKcDOJavI8dZHhr.png" alt="屏幕截图 2021-10-23 120735.png"><br>在所有函数外部定义的变量，拥有全局作用域。其可以被脚本中的任何部分访问（访问方法：使用global关键字）</p></li></ul><p><img src="https://i.loli.net/2021/10/23/iK8huHVBAle3XrL.png" alt="屏幕截图 2021-10-23 154905.png"></p><p><img src="https://i.loli.net/2021/10/23/GWjO2s8UDviwz4f.png" alt="屏幕截图 2021-10-23 154956.png"></p><p><img src="https://i.loli.net/2021/10/23/yoJYfpRlv19BQAH.png" alt="屏幕截图 2021-10-23 155035.png"></p>]]></content>
     
