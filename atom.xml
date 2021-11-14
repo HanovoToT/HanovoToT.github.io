@@ -6,7 +6,7 @@
   <link href="https://hanovotot.github.io/atom.xml" rel="self"/>
   
   <link href="https://hanovotot.github.io/"/>
-  <updated>2021-11-02T13:28:13.057Z</updated>
+  <updated>2021-11-14T13:48:05.869Z</updated>
   <id>https://hanovotot.github.io/</id>
   
   <author>
@@ -17,20 +17,44 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>less1~less4小总结</title>
+    <link href="https://hanovotot.github.io/2021/11/14/less2/"/>
+    <id>https://hanovotot.github.io/2021/11/14/less2/</id>
+    <published>2021-11-14T10:05:50.861Z</published>
+    <updated>2021-11-14T13:48:05.869Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>通过尝试使其报错，发现注入点</li><li>order by </li><li>union select 联合查询</li><li>查库列表字段</li><li>group_concat()和concat_ws(‘~’,id,password)镶嵌展示出答案</li></ul><h2 id="在sql盲注"><a href="#在sql盲注" class="headerlink" title="在sql盲注"></a>在sql盲注</h2><ul><li>select left（a，b）     //a的第b位</li><li>select a()regexp ‘b’    //a从左至右只要没有错（输入的b）就为正确，无论多少位</li><li>select  a()like ‘b%’      //同上</li><li>substr（a，b，c）      //b位置截取a字符串c个</li><li>ascii（）                     //转化为ascii值</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;通过尝试使其报错，发现注入点&lt;/li&gt;
+&lt;li&gt;order by &lt;/li&gt;
+&lt;li&gt;union select 联合查询&lt;/li&gt;
+&lt;li&gt;查库列表字段&lt;/li&gt;
+&lt;li&gt;group_concat()和concat_ws(‘~’,id,password)镶嵌展示</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>less 1</title>
     <link href="https://hanovotot.github.io/2021/11/02/1/"/>
     <id>https://hanovotot.github.io/2021/11/02/1/</id>
     <published>2021-11-02T11:59:53.204Z</published>
-    <updated>2021-11-02T13:28:13.057Z</updated>
+    <updated>2021-11-14T10:04:31.261Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h2><ul><li>mysql -hlocalhost -uroot -p</li><li>mysql -hlocalhost；查询数据库</li><li>use security; （本次实验中数据库名为security）</li><li>show tables：（查询表格）</li><li>desc emails； （查询表格结构）</li><li>use information_schema （讨论系统数据库） </li></ul>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://i.loli.net/2021/11/13/8byP6pDQ5faxSj7.png" alt="屏幕截图 2021-11-02 195904.png"> </p><h2 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h2><p> *库 表 列 字段<br>  查库：select schema_name from information_schema.schemata</p><p>  查表：select table_name from information_schema.tables where table_name=‘security’（建议使用16进制避免引入单引号）</p><p>  查列：select column_name from information_schema.columns where table_name=‘users’（建议使用16进制避免引入单引号）适用于所有单引号</p><ul><li><p>where定位（限制）</p></li><li><p>limit 0，1<br>  从第一个开始，显示一个</p></li><li><p>注释符：–+； –   ；#</p></li><li><p>可以利用一个恒真的句子（例如：or 1=1），使返回值恒真<br>思考：同样可以用一个恒假的句子来检测其正确</p></li></ul><p> 解题心得：<br>  order by x 使数据的第x列进行排序<br>  然后查出有三列<br>  使用语句 union select1，2，3– ；试出哪个数据可以回显<br>  执行后句子没有报错，但依旧和原来一样<br>  是因为id=1.输出了1的用户名以及password<br>  然后我们将1改为-1，使其报错<br>  然后显示如下<br><img src="https://i.loli.net/2021/11/13/IcfO1EwyeTNGX2b.png" alt="屏幕截图 2021-11-13 102744.png"><br> 说明第二列为用户名，第三列为password<br> 把3改schema_name from information_schema.schemata– 进行查库<br> group_concat(schema_name) from information_schema.schemata– </p><p> 后再进行查表查列</p><p> 将username和password取出可以使用concat_ws(“<del>“,username,password)<br> 使用grorp_conct(concat_ws(‘</del>‘,username,password)) 则可以取出全部，且方便阅读</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;h2 id=&quot;mysql&quot;&gt;&lt;a href=&quot;#mysql&quot; class=&quot;headerlink&quot; title=&quot;mysql&quot;&gt;&lt;/a&gt;mysql&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;mysql -hlocalhost -uroot -p&lt;/li&gt;
-&lt;li&gt;mysql -hlocalho</summary>
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2021/11/13/8byP6pDQ5faxSj7.png&quot; alt=&quot;屏幕截图 2021-11-02 195904.png&quot;&gt; &lt;/p&gt;
+&lt;h2 id=&quot;mysql&quot;&gt;&lt;a href=&quot;#mysql&quot; class</summary>
       
     
     
