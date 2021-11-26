@@ -193,28 +193,26 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/11/14/less2/" target="_self">
-          less1~less4小总结
+        <a href="/2021/11/17/less%207/" target="_self">
+          less 7
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/11/14/less2/" target="_self">
+        <a href="/2021/11/17/less%207/" target="_self">
           
           
             
           
-          
-通过尝试使其报错，发现注入点
-order by 
-union select 联合查询
-查库列表字段
-group_concat()和concat_ws(‘~’,id,password)镶嵌展示出答案
+          一句话木马 &lt;?php @eval($_POST[pass]);?&gt;
 
-在sql盲注
-select left（a，b）     //a的第b位
-select a()regexp ‘b’    //a从左至右只要没有错（输入的b）就为正确，无论多少位
-select  a(
+select  ‘something’ into outfile ‘where’  将 something 写入where(where可以是文件也可以是指定的路径//使用双斜线来代替斜线)
+
+select load_file（)  读取本地文件
+
+解题心得
+首先还是试出？id=1’))–+
+根据题目的提示知道使用o
         </a>
       </p>
 
@@ -222,8 +220,8 @@ select  a(
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2021-11-14 18:05" pubdate>
-              2021-11-14
+            <time datetime="2021-11-17 15:05" pubdate>
+              2021-11-17
             </time>
           </div>
         
@@ -239,21 +237,20 @@ select  a(
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/11/02/1/" target="_self">
-          less 1
+        <a href="/2021/11/15/less%205/" target="_self">
+          less 5
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/11/02/1/" target="_self">
+        <a href="/2021/11/15/less%205/" target="_self">
           
           
             
           
-           
-mysql *库 表 列 字段  查库：select schema_name from information_schema.schemata
-  查表：select table_name from information_schema.tables where table_name=‘security’（建议使用16进制避免引入单引号）
-  查列：select column_name fro
+          bool盲注出现情况：正确时返回一个结果，错误时不返回任何数值
+解题过程:  * 直接使用order by判读出其有三列                * 但无法直接使用联合查询                * 使用了left函数
+
         </a>
       </p>
 
@@ -261,8 +258,8 @@ mysql *库 表 列 字段  查库：select schema_name from information_schema.s
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2021-11-02 19:59" pubdate>
-              2021-11-02
+            <time datetime="2021-11-15 22:17" pubdate>
+              2021-11-15
             </time>
           </div>
         

