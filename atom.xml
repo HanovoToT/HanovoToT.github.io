@@ -6,7 +6,7 @@
   <link href="https://hanovotot.github.io/atom.xml" rel="self"/>
   
   <link href="https://hanovotot.github.io/"/>
-  <updated>2021-11-17T15:15:48.103Z</updated>
+  <updated>2022-01-22T12:30:58.024Z</updated>
   <id>https://hanovotot.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>学习</title>
+    <link href="https://hanovotot.github.io/2022/01/19/less%208/"/>
+    <id>https://hanovotot.github.io/2022/01/19/less%208/</id>
+    <published>2022-01-19T13:59:58.080Z</published>
+    <updated>2022-01-22T12:30:58.024Z</updated>
+    
+    <content type="html"><![CDATA[<p>less8<br>找到注入点，使用id=1‘<br>后面按照前几关的步骤进行，得到结果<br>开始还是得多自己进行手打，对这些代码还是不熟悉，得多练习<br>less 9-10<br>就还是这样子吧，差不多的步骤。</p><p>这三关都可以使用时间盲注的方法来使用。<br>if函数<br>if（1，2，3）<br>若1为真，则执行2，否则执行3<br>通过此方法，通过检测数据库长度，或是数据库的ascii值，以及页面的刷新速度，来检测出数据库<br>以及我们所需。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;less8&lt;br&gt;找到注入点，使用id=1‘&lt;br&gt;后面按照前几关的步骤进行，得到结果&lt;br&gt;开始还是得多自己进行手打，对这些代码还是不熟悉，得多练习&lt;br&gt;less 9-10&lt;br&gt;就还是这样子吧，差不多的步骤。&lt;/p&gt;
+&lt;p&gt;这三关都可以使用时间盲注的方法来使用。&lt;br</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>less 7</title>
