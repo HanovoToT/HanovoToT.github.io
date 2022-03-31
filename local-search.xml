@@ -4,6 +4,32 @@
   
   
   <entry>
+    <title>一些题目</title>
+    <link href="/2022/03/31/nss/"/>
+    <url>/2022/03/31/nss/</url>
+    
+    <content type="html"><![CDATA[<p><img src="https://s2.loli.net/2022/03/31/7A46UHOeItxwMyu.png" alt="屏幕截图 2022-03-31 154624.png"></p><p><img src="https://s2.loli.net/2022/03/31/Mzs4oW7Y5talDxC.png" alt="屏幕截图 2022-03-31 154743.png"></p><p>尝试输入后，发现只有输入数字才存在下面回显，输入字母和字符没有回显<br><img src="https://s2.loli.net/2022/03/31/CXIF7R59q6xScQs.png" alt="屏幕截图 2022-03-31 154855.png"></p><p>改为输入1’ 发现回显消失，发现注入漏洞</p><p><img src="https://s2.loli.net/2022/03/31/bjqfy92hpXixWG7.png" alt="屏幕截图 2022-03-31 160128.png"></p><p>在使用order by 过滤时，均显示nonono<br>联合查询无法使用，尝试盲注后，发现布尔和时间盲注也不法使用<br>去查了一下，可以使用堆叠注入<br><img src="https://s2.loli.net/2022/03/31/tYhVpZF4Q3CkIqc.png" alt="屏幕截图 2022-03-31 174451.png"><br>继续搜索表，发现一个flag的表，但搜索该数据又显示了<br>nonono</p><p>又查了一下</p><p>通过只返回数字推出存在  ||    （这个是什么）？？</p><p><img src="https://s2.loli.net/2022/03/31/dvVPOnuYRArEByo.png" alt="屏幕截图 2022-03-31 180157.png"></p><p>or</p><p><img src="https://s2.loli.net/2022/03/31/TOozhRQ9NcpYlsU.png" alt="屏幕截图 2022-03-31 180314.png"></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>学习</title>
+    <link href="/2022/02/17/less%2014/"/>
+    <url>/2022/02/17/less%2014/</url>
+    
+    <content type="html"><![CDATA[<p>less 14 15 16<br>同less 13,仅包裹方式不同<br>14 “”<br>15 ‘’<br>16 （“”）</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>学习</title>
     <link href="/2022/02/11/less%2011/"/>
     <url>/2022/02/11/less%2011/</url>
