@@ -4,11 +4,24 @@
   
   
   <entry>
+    <title>1</title>
+    <link href="/2022/04/13/nss2/"/>
+    <url>/2022/04/13/nss2/</url>
+    
+    <content type="html"><![CDATA[<p>[SWPUCTF 2021 新生赛]easy_sql</p><ul><li>难得的相见如故</li></ul><p>查询到有3个字段数<br><img src="https://s2.loli.net/2022/04/12/4Lz1noIfQ5bhdAy.png" alt="屏幕截图 2022-04-12 233143.png"></p><p>再进行查表查字段，发现flag就在这<br><img src="https://s2.loli.net/2022/04/12/IX8fyGLVs4vauKZ.png" alt="屏幕截图 2022-04-12 235656.png"></p><p><img src="https://s2.loli.net/2022/04/13/4FJ5VQHXwsG7KTO.png" alt="屏幕截图 2022-04-13 000016.png"></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>php伪协议</title>
     <link href="/2022/04/12/nss1/"/>
     <url>/2022/04/12/nss1/</url>
     
-    <content type="html"><![CDATA[<p><img src="https://s2.loli.net/2022/04/12/abNKercX1wBOjpM.png" alt="屏幕截图 2022-04-12 215544.png"></p><h2 id="php伪协议"><a href="#php伪协议" class="headerlink" title="php伪协议"></a>php伪协议</h2><ul><li><p>php://filter<br>经常使用的一种伪协议，一般用于任意文件读取，有时也可以用于getshell.在双OFF的情况下也可以使用.</p><p>php://filter是一种元封装器，用于数据流打开时筛选过滤应用。这对于一体式（all-in-one）的文件函数非常有用。类似readfile()、file()、file_get_contents(),在数据流读取之前没有机会使用其他过滤器。</p><p>php://filter参数<br><img src="https://s2.loli.net/2022/04/12/uc25qHaTtA4DfZN.png" alt="屏幕截图 2022-04-12 223144.png"></p></li></ul><p><img src="https://s2.loli.net/2022/04/12/j9CxJWt6w3DAIzH.png" alt="屏幕截图 2022-04-12 224414.png"></p><ul><li>提示flag在flag.php中</li></ul><p><img src="https://s2.loli.net/2022/04/12/wnhE7zdVo4krLQR.png" alt="屏幕截图 2022-04-12 224709.png"></p><p>现在具体说说file=php://filter/read=convert.base64-encode/resource=index.php的含义</p><p>首先这是一个file关键字的get参数传递，php://是一种协议名称，php://filter/是一种访问本地文件的协议，/read=convert.base64-encode/表示读取的方式是base64编码后，resource=index.php表示目标文件为index.php。</p><p>通过传递这个参数可以得到index.php的源码，下面说说为什么，看到源码中的include函数，这个表示从外部引入php文件并执行，如果执行不成功，就返回文件的源码。</p><p>而include的内容是由用户控制的，所以通过我们传递的file参数，是include（）函数引入了index.php的base64编码格式，因为是base64编码格式，所以执行不成功，返回源码，所以我们得到了源码的base64格式，解码即可。</p><p>如果不进行base64编码传入，就会直接执行，而flag的信息在注释中，是得不到的。</p>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://s2.loli.net/2022/04/12/abNKercX1wBOjpM.png" alt="屏幕截图 2022-04-12 215544.png"></p><h2 id="php伪协议"><a href="#php伪协议" class="headerlink" title="php伪协议"></a>php伪协议</h2><ul><li><p>php://filter<br>经常使用的一种伪协议，一般用于任意文件读取，有时也可以用于getshell.在双OFF的情况下也可以使用.</p><p>php://filter是一种元封装器，用于数据流打开时筛选过滤应用。这对于一体式（all-in-one）的文件函数非常有用。类似readfile()、file()、file_get_contents(),在数据流读取之前没有机会使用其他过滤器。</p><p>php://filter参数<br><img src="https://s2.loli.net/2022/04/12/uc25qHaTtA4DfZN.png" alt="屏幕截图 2022-04-12 223144.png"></p></li></ul><p><img src="https://s2.loli.net/2022/04/12/j9CxJWt6w3DAIzH.png" alt="屏幕截图 2022-04-12 224414.png"></p><ul><li>提示flag在flag.php中</li></ul><p><img src="https://s2.loli.net/2022/04/12/wnhE7zdVo4krLQR.png" alt="屏幕截图 2022-04-12 224709.png"></p><p>现在具体说说file=php://filter/read=convert.base64-encode/resource=index.php的含义</p><p>首先这是一个file关键字的get参数传递，php://是一种协议名称，php://filter/是一种访问本地文件的协议，/read=convert.base64-encode/表示读取的方式是base64编码后，resource=index.php表示目标文件为index.php。</p><p>通过传递这个参数可以得到index.php的源码，下面说说为什么，看到源码中的include函数，这个表示从外部引入php文件并执行，如果执行不成功，就返回文件的源码。</p><p>而include的内容是由用户控制的，所以通过我们传递的file参数，是include（）函数引入了index.php的base64编码格式，因为是base64编码格式，所以执行不成功，返回源码，所以我们得到了源码的base64格式，解码即可。</p><p>如果不进行base64编码传入，就会直接执行，而flag的信息在注释中，是得不到的。</p><p><img src="https://s2.loli.net/2022/04/12/gLDeFG5ncIfCOAW.png" alt="屏幕截图 2022-04-12 230553.png"></p>]]></content>
     
     
     
